@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>实时热榜聚合</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="hero-copy">
+          <p class="brand-kicker">Hot Trends</p>
+          <h1 class="brand-title">实时热榜</h1>
+          <p class="brand-subtitle">把正在发生的事，安静地放在一起。</p>
+        </div>
+        <div class="status-panel">
+          <span id="updatedAt">等待更新</span>
+          <button id="themeButton" class="icon-button" type="button">暗色</button>
+        </div>
+      </header>
+
+      <section class="toolbar" aria-label="筛选与状态">
+        <div class="segmented" role="group" aria-label="平台筛选">
+          <button class="filter active" type="button" data-source="all">全部</button>
+          <button class="filter" type="button" data-source="cn">中文平台</button>
+          <button class="filter" type="button" data-source="media">国际媒体</button>
+          <button class="filter" type="button" data-source="baidu">百度</button>
+          <button class="filter" type="button" data-source="weibo">微博</button>
+          <button class="filter" type="button" data-source="zhihu">知乎</button>
+          <button class="filter" type="button" data-source="ithome">IT之家</button>
+          <button class="filter" type="button" data-source="gamersky">游民星空</button>
+          <button class="filter" type="button" data-source="economist">Economist</button>
+          <button class="filter" type="button" data-source="reuters">Reuters</button>
+          <button class="filter" type="button" data-source="ft">FT</button>
+          <button class="filter" type="button" data-source="bbc">BBC</button>
+        </div>
+        <div class="toolbar-actions">
+          <button id="expandAllButton" class="icon-button" type="button" aria-pressed="true">收起</button>
+        </div>
+      </section>
+
+      <section id="summary" class="summary" aria-live="polite"></section>
+      <section id="list" class="trend-list" aria-live="polite"></section>
+      <section id="empty" class="empty" hidden>
+        <p>暂时没有可展示的热榜内容</p>
+      </section>
+    </main>
+
+    <button id="backToTop" class="back-to-top" type="button" title="返回顶部" aria-label="返回顶部">&uarr;</button>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
