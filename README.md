@@ -32,5 +32,3 @@ GET /api/hot?refresh=1
 ## 数据策略
 
 优先请求 DailyHotApi 公共实例；如果公共实例不可达，会自动降级到平台公开入口或 RSS。Windows 下 Node 请求失败时，会自动改用系统网络通道请求，从而继承系统代理设置。服务端缓存 5 分钟，避免频繁请求外部平台。
-# Real-time-Hot-List
-# Real-time-Hot-List
